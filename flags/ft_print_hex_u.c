@@ -12,6 +12,9 @@
 
 #include "../printf.h"
 
+/*
+* Handle the X flag to print hex uppercase
+*/
 void	print_hex_u(int n)
 {
 	if (n >= 16)
