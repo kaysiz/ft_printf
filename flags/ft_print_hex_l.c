@@ -12,6 +12,9 @@
 
 #include <unistd.h>
 
+/*
+* Handle the x flag to print hex lowercase
+*/
 void	print_hex_l(int n)
 {
 	if (n >= 16)
