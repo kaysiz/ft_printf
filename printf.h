@@ -9,5 +9,6 @@
 
 void	print_hex_l(int n);
 void	print_hex_u(int n);
+int		ft_printf(const char *format, ...);
 
 #endif
