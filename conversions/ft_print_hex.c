@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex_u.c                                     :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksiziva <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/04 17:41:19 by ksiziva           #+#    #+#             */
-/*   Updated: 2018/08/04 17:41:22 by ksiziva          ###   ########.fr       */
+/*   Updated: 2018/08/14 09:52:12 by ksiziva          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printf.h"
+#include <unistd.h>
 
 /*
-* Handle the X flag to print hex uppercase
+* Handle the x and X flag to print hex
 */
-void	print_hex_u(int n)
+void	print_hex(int n, char c)
 {
 	if (n >= 16)
-		print_hex_u(n / 16);
+		print_hex_l(n / 16);
 	n = n % 16;
-	n += n < 10 ? '0' : 'A' - 10;
+	n += n < 10 ? '0' : (c == 'x' ? 'a' : 'A') - 10;
 	write(1, &n, 1);
 }
