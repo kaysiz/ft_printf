@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../ft_printf.h"
 
 /*
 * Handle the x and X flag to print hex
@@ -18,7 +18,7 @@
 void	print_hex(int n, char c)
 {
 	if (n >= 16)
-		print_hex_l(n / 16);
+		print_hex(n / 16, c);
 	n = n % 16;
 	n += n < 10 ? '0' : (c == 'x' ? 'a' : 'A') - 10;
 	write(1, &n, 1);

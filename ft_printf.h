@@ -7,8 +7,6 @@
 # include <string.h>
 # include <stdarg.h>
 
-void	print_hex_l(int n);
-void	print_hex_u(int n);
+void	print_hex(int n, char c);
 int		ft_printf(const char *format, ...);
-
 #endif
